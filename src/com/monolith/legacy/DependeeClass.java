@@ -5,6 +5,15 @@
  * 
  */
 package com.monolith.legacy;
+import java.io.UnsupportedEncodingException;
+import java.util.concurrent.ExecutionException;
+import javax.json.bind.JsonbException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import com.miracle.labs.transform.generated.tools.RESTClient;
+;
 
 public class DependeeClass {
 
@@ -20,62 +29,64 @@ public class DependeeClass {
 
 	private ClassA<String> a = new ClassA<String>();
 		public ClassA<String> getA()
-		{
-			return a;
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getA",ClassA.class,"",map);
+}
 		public void setA(ClassA<String> a)
-		{
-			this.a = a;
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map <String,Object> map = new HashMap<>();
+ map.put("0",a);
+ new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","setA",void.class,a,map);
+}
 		
 		public int getInt()
-		{
-			
-			return puInt;
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getInt",int.class,"",map);
+}
 		
 		public void setInt(int i)
-		{
-			puInt = i;
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map <String,Object> map = new HashMap<>();
+ map.put("0",i);
+ new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","setInt",void.class,i,map);
+}
 		
 		public void setInternals(int i, String b, float f, char c, Double bd )
-		{
-			intI=i;
-			this.b = b;
-			this.f = f;
-			this.c = c;
-			this.bd = bd;
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map <String,Object> map = new HashMap<>();
+ map.put("0",i);
+ map.put("1",b);
+ map.put("2",f);
+ map.put("3",c);
+ map.put("4",bd);
+ new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","setInternals",void.class,i+b+f+c+bd,map);
+}
 		
 		public String getInternals(int i)
-		{
-			if (i==intI)
-			{
-				return ""+this.intI+","+this.b+","+this.f+","+this.c+","+this.bd;
-						
-			}
-			else
-			{
-				return "Value of i didn't match";
-			}
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getInternals",String.class,i,map);
+}
 		
 		public String getString()
-		{
-			return "String from  "+ this.toString();
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getString",String.class,"",map);
+}
 		
 		private int getPrivateInt()
-		{
-			// no need to process private methods
-			return getInt();
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getPrivateInt",int.class,"",map);
+}
 		
 		protected int getProtectedInt()
-		{
-			return getInt();
-		}
+		throws UnsupportedEncodingException, JsonbException, InterruptedException, ExecutionException, InstantiationException, IllegalAccessException, InvocationTargetException{
+Map<String,Object> map = Collections.EMPTY_MAP;
+ return new RESTClient("https://demo-transform-findnew-stage.apps.sandbox.x8i5.p1.openshiftapps.com/").executeRemote("DependeeClass","getProtectedInt",int.class,"",map);
+}
 		
 	
 	
